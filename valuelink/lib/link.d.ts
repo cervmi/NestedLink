@@ -67,7 +67,7 @@ export declare abstract class StateRef<T> {
      * Convert link to object to the object of links. Optionally filter by
      */
     pick<K extends keyof T>(...keys: K[]): {
-        [P in K]: StateRef<T[P]>;
+        [P in K]: RefAt<K, T[P]>;
     };
     /**
      * Convert link to object to the object of links with $-keys.
